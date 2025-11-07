@@ -1,0 +1,16 @@
+[
+  {
+    "id": "s1",
+    "name": "Coffee Corner",
+    "ownerId": "u1",
+    "products": ["p1", "p2"],
+    "description": "Very good coffee"
+  },
+  {
+    "id": "s2",
+    "name": "Book Haven",
+    "ownerId": "u2",
+    "products": ["p3", "p4"],
+    "description": "Find any book you want"
+  }
+]
