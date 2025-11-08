@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "home": "Home",
+    "shops": "Shops",
+    "profile": "Profile",
+    "login": "Login"
+  },
+  "homePage": {
+    "discover": "Discover Local Stores in Kyrgyzstan",
+    "description": "Bazar helps small and mid-level merchants showcase their products online easily",
+    "exploreStores": "Explore Stores",
+    "addMyStore": "Add My Store",
+    "featuredShops": "Featured Shops"
+  },
+  "product": {
+    "add": "Add Product",
+    "price": "Price",
+    "stock": "Stock"
+  },
+  "shopDirectory": {
+    "shopsDirectory": "Shops Directory"
+  },
+  "shopPage": {
+    "description": "Shop Description",
+    "shopNotFound": "Shop not found",
+    "products": "Products"
+  },
+  "footer": {
+    "copyright": "Helping local merchants go online.",
+    "contact": "Contact"
+  },
+  "button": {
+    "visitShop": "Visit Shop"
+  }
+}

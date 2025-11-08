@@ -1,15 +1,18 @@
 // src/lib/constants/routes.ts
 export const ROUTES = {
-  HOME: "/", // src/app/page.tsx
-  SHOPS: "/shop-directory", // src/app/shop-directory/shopDirectoryPage.tsx
-  SHOP: (id: string) => `/shop-directory/${id}`, // src/app/shop-directory/[id]/shopStorefront.tsx
-  ABOUT: "/about", // create src/app/about/page.tsx if needed
-  LOGIN: "/login", // create src/app/login/page.tsx if needed
-  SIGNUP: "/signup", // create src/app/signup/page.tsx if needed
-  DASHBOARD: "/dashboard", // create src/app/dashboard/page.tsx if needed
-  MY_SHOPS: "/dashboard/my-shops", // create nested pages as needed
-  EDIT_SHOP: (id: string) => `/dashboard/edit-shop/${id}`,
-  PRODUCTS: (shopId: string) => `/dashboard/products/${shopId}`,
-  CATALOGS: (shopId: string) => `/dashboard/catalogs/${shopId}`,
-  INVENTORY: (shopId: string) => `/dashboard/inventory/${shopId}`,
+  HOME: (lang: string) => `/${lang}`, // src/app/[lang]/page.tsx
+  SHOPS: (lang: string) => `/${lang}/shop-directory`, // src/app/[lang]/shop-directory/page.tsx
+  SHOP: (lang: string, id: string) => `/${lang}/shop-directory/${id}`, // src/app/[lang]/shop-directory/[id]/page.tsx
+  ABOUT: (lang: string) => `/${lang}/about`, // src/app/[lang]/about/page.tsx
+  LOGIN: (lang: string) => `/${lang}/login`, // src/app/[lang]/login/page.tsx
+  SIGNUP: (lang: string) => `/${lang}/signup`, // src/app/[lang]/signup/page.tsx
+  DASHBOARD: (lang: string) => `/${lang}/dashboard`, // src/app/[lang]/dashboard/page.tsx
+  MY_SHOPS: (lang: string) => `/${lang}/dashboard/my-shops`, // nested pages
+  EDIT_SHOP: (lang: string, id: string) => `/${lang}/dashboard/edit-shop/${id}`,
+  PRODUCTS: (lang: string, shopId: string) =>
+    `/${lang}/dashboard/products/${shopId}`,
+  CATALOGS: (lang: string, shopId: string) =>
+    `/${lang}/dashboard/catalogs/${shopId}`,
+  INVENTORY: (lang: string, shopId: string) =>
+    `/${lang}/dashboard/inventory/${shopId}`,
 };

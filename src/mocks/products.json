@@ -2,6 +2,7 @@
   {
     "id": "p1",
     "name": "Espresso",
+    "description": "Rich and bold espresso with a smooth finish.",
     "price": 3.5,
     "shopId": "s1",
     "image": "https://images.pexels.com/photos/685527/pexels-photo-685527.jpeg"
@@ -9,13 +10,15 @@
   {
     "id": "p2",
     "name": "Cappuccino",
+    "description": "Creamy cappuccino topped with a layer of frothy milk.",
     "price": 4.0,
     "shopId": "s1",
     "image": "https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg"
   },
   {
     "id": "p3",
-    "name": "grokking algorithms",
+    "name": "Grokking Algorithms",
+    "description": "A friendly introduction to algorithms and problem-solving techniques.",
     "price": 12.0,
     "shopId": "s2",
     "image": "https://images.manning.com/264/352/resize/book/3/0b325da-eb26-4e50-8a2a-46042c647083/Bhargava-Algorithms_hires.png"
@@ -23,6 +26,7 @@
   {
     "id": "p4",
     "name": "Clean Code",
+    "description": "A handbook of agile software craftsmanship and best coding practices.",
     "price": 15.0,
     "shopId": "s2",
     "image": "https://m.media-amazon.com/images/I/71T7aD3EOTL._UF1000,1000_QL80_.jpg"

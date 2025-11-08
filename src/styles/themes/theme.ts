@@ -3,7 +3,7 @@ import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 const config = defineConfig({
   theme: {
     breakpoints: {
-      sm: "320px",
+      sm: "299px",
       md: "768px",
       lg: "960px",
       xl: "1200px",
@@ -19,7 +19,7 @@ const config = defineConfig({
         },
         surface: {
           light: { value: "#fefdfb" }, // “milk white”
-          dark: { value: "#113a23ff" }, // dark blue background
+          dark: { value: "#1a1a24ff" }, // dark blue background
         },
         text: {
           light: { value: "#1a1a1a" },

@@ -1,10 +1,19 @@
-import { Box, Image, Text, Heading, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Text,
+  Heading,
+  Stack,
+  Button,
+  Card,
+} from "@chakra-ui/react";
 
 interface Product {
   id: string;
   name: string;
   price: number;
   image?: string;
+  description: string;
 }
 
 interface ProductCardProps {
@@ -13,7 +22,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4}>
+    <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} marginLeft={4} >
       {product.image && (
         <Image
           src={product.image}
@@ -25,6 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       )}
       <Stack mt={2} textAlign="center">
         <Heading size="md">{product.name}</Heading>
+        <Heading size="md">{product.description}</Heading>
         <Text fontWeight="bold">${product.price.toFixed(2)}</Text>
       </Stack>
     </Box>
