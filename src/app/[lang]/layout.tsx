@@ -14,7 +14,7 @@ export default async function RootLayout({
   children: ReactNode;
   params: { lang: "en" | "ru" | "ky" };
 }) {
-  const { lang } = await params;
+  const { lang } = params;
   const dict = await getDictionary(lang);
 
   return (
