@@ -1,12 +1,12 @@
 import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import ProductCard from "@/features/products/components/productCard";
 import { ShopService } from "@/lib/services/shopService";
-import { getDictionary } from "../../dictionaries";
+import { getDictionary, Locale } from "../../dictionaries";
 
 interface ShopPageProps {
   params: Promise<{
     id: string;
-    lang: "en" | "ru" | "ky";
+    lang: Locale;
   }>;
 }
 

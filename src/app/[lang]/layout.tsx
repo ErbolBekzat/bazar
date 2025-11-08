@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { Provider } from "@/components/ui/provider";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import { getDictionary } from "./dictionaries";
+import { getDictionary, Locale } from "./dictionaries";
 import { DictProvider } from "@/context/dict-provider";
 
 
@@ -12,7 +12,7 @@ export default async function RootLayout({
   params,
 }: {
   children: ReactNode;
-  params: Promise<{ lang: "en" | "ru" | "ky" }>;
+  params: Promise<{ lang: Locale }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
