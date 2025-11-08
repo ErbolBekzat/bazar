@@ -10,6 +10,7 @@ interface ShopPageProps {
   }>;
 }
 
+
 export default async function ShopStorefront({ params }: ShopPageProps) {
   // Await params first
   const { id, lang } = await params;
@@ -36,4 +37,13 @@ export default async function ShopStorefront({ params }: ShopPageProps) {
       </SimpleGrid>
     </Box>
   );
+}
+
+
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' as const },
+    { lang: 'ru' as const },
+    { lang: 'ky' as const },
+  ];
 }

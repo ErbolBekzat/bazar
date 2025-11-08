@@ -16,7 +16,7 @@ import { getDictionary } from "./dictionaries";
 export default async function HomePage({
   params,
 }: {
-  params: Promise<{ lang: 'ky' | 'en' | 'ru' }>;
+  params: Promise<{ lang: "en" | "ru" | "ky" }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
@@ -77,4 +77,13 @@ export default async function HomePage({
       </Box>
     </Box>
   );
+}
+
+
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' as const },
+    { lang: 'ru' as const },
+    { lang: 'ky' as const },
+  ];
 }

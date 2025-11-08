@@ -6,13 +6,14 @@ import Footer from "@/components/layout/footer";
 import { getDictionary } from "./dictionaries";
 import { DictProvider } from "@/context/dict-provider";
 
+type Params = Promise<{ lang: 'ky' | 'en' | 'ru' }>;
 
 export default async function RootLayout({
   children,
   params,
 }: {
   children: ReactNode;
-  params: Promise<{ lang: 'ky' | 'en' | 'ru' }>;
+  params: Params;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
@@ -35,4 +36,13 @@ export default async function RootLayout({
       </body>
     </html>
   );
+}
+
+// Add generateStaticParams to tell Next.js about the valid lang values
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' as const },
+    { lang: 'ru' as const },
+    { lang: 'ky' as const },
+  ];
 }

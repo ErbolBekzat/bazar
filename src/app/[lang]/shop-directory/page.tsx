@@ -5,6 +5,8 @@ import { ShopService } from "@/lib/services/shopService";
 import { ROUTES } from "@/lib/constants/routes";
 import { getDictionary } from "../dictionaries";
 
+
+
 export default async function ShopsDirectoryPage({
   params,
 }: {
@@ -35,4 +37,13 @@ export default async function ShopsDirectoryPage({
       </SimpleGrid>
     </Box>
   );
+}
+
+
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' as const },
+    { lang: 'ru' as const },
+    { lang: 'ky' as const },
+  ];
 }
