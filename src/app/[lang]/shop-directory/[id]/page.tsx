@@ -6,7 +6,7 @@ import { getDictionary } from "../../dictionaries";
 interface ShopPageProps {
   params: Promise<{
     id: string;
-    lang: "en";
+    lang: 'ky' | 'en' | 'ru';
   }>;
 }
 

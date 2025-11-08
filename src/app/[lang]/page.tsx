@@ -16,7 +16,7 @@ import { getDictionary } from "./dictionaries";
 export default async function HomePage({
   params,
 }: {
-  params: Promise<{ lang: "en" }>;
+  params: Promise<{ lang: 'ky' | 'en' | 'ru' }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
