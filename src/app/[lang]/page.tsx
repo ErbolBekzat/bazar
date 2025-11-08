@@ -10,13 +10,13 @@ import {
 import Link from "next/link";
 import { ShopService } from "@/lib/services/shopService"; // fetch mock shops
 import { ROUTES } from "@/lib/constants/routes";
-import { getDictionary, Locale } from "./dictionaries";
+import { getDictionary } from "./dictionaries";
 
 
 export default async function HomePage({
   params,
 }: {
-  params: Promise<{ lang: Locale }>;
+  params: Promise<{ lang: "en" | "ru" | "ky" }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);

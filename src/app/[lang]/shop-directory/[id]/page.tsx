@@ -1,19 +1,18 @@
 import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import ProductCard from "@/features/products/components/productCard";
 import { ShopService } from "@/lib/services/shopService";
-import { getDictionary, Locale } from "../../dictionaries";
+import { getDictionary } from "../../dictionaries";
 
 interface ShopPageProps {
   params: Promise<{
     id: string;
-    lang: Locale;
+    lang: "en" | "ru" | "ky";
   }>;
 }
 
 export default async function ShopStorefront({ params }: ShopPageProps) {
   // Await params first
   const { id, lang } = await params;
-  console.log("lang: " + lang);
   const dict = await getDictionary(lang);
   const shop = id ? ShopService.getShopById(id) : null;
 
