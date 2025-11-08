@@ -10,7 +10,7 @@ export default async function ShopsDirectoryPage({
 }: {
   params: { lang: "en" | "ru" | "ky" };
 }) {
-  const { lang } = await params;
+  const { lang } = params;
   const dict = await getDictionary(lang);
   const shops = ShopService.getAllShops();
 
