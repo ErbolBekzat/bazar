@@ -16,9 +16,9 @@ import { getDictionary } from "./dictionaries";
 export default async function HomePage({
   params,
 }: {
-  params: { lang: "en" | "ru" | "ky" };
+  params: Promise<{ lang: "en" | "ru" | "ky" }>;
 }) {
-  const { lang } = params;
+  const { lang } = await params;
   const dict = await getDictionary(lang);
   const shops = ShopService.getAllShops(); // mock data array
 

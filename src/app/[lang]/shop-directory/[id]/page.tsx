@@ -4,13 +4,15 @@ import { ShopService } from "@/lib/services/shopService";
 import { getDictionary } from "../../dictionaries";
 
 interface ShopPageProps {
-  params: { id: string; lang: "en" | "ru" | "ky" };
+  params: Promise<{
+    id: string;
+    lang: "en" | "ru" | "ky";
+  }>;
 }
-
 
 export default async function ShopStorefront({ params }: ShopPageProps) {
   // Await params first
-  const { id, lang } = params;
+  const { id, lang } = await params;
   console.log("lang: " + lang);
   const dict = await getDictionary(lang);
   const shop = id ? ShopService.getShopById(id) : null;
