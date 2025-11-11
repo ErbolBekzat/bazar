@@ -1,7 +1,7 @@
 // app/[lang]/dictionaries.ts
 import "server-only";
 
-export async function getDictionary(locale: 'ky' | 'en' | 'ru') {
+export async function getDictionary(locale: string) {
     console.log('getDictionary locale: ' + locale);
   switch (locale) {
     case "en": {

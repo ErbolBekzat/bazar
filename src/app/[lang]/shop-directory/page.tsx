@@ -10,7 +10,7 @@ import { getDictionary } from "../dictionaries";
 export default async function ShopsDirectoryPage({
   params,
 }: {
-  params: Promise<{ lang: 'ky' | 'en' | 'ru' }>;
+  params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);

@@ -6,7 +6,7 @@ import { getDictionary } from "../../dictionaries";
 interface ShopPageProps {
   params: Promise<{
     id: string;
-    lang: 'ky' | 'en' | 'ru';
+    lang: string;
   }>;
 }
 
@@ -37,13 +37,4 @@ export default async function ShopStorefront({ params }: ShopPageProps) {
       </SimpleGrid>
     </Box>
   );
-}
-
-
-export async function generateStaticParams() {
-  return [
-    { lang: 'en' as const },
-    { lang: 'ru' as const },
-    { lang: 'ky' as const },
-  ];
 }
