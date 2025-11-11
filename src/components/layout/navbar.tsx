@@ -11,6 +11,7 @@ import {
   Portal,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { IoCloseSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ROUTES } from "@/lib/constants/routes";
@@ -25,9 +26,20 @@ const LANGS = [
 export default function Navbar({ currentLang }: { currentLang: string }) {
   const { open: isOpen, onOpen, onClose } = useDisclosure();
   const dict = useDict();
+  const pathname = usePathname();
+
   const currentLangLabel =
     LANGS.find((l) => l.code === currentLang)?.label ??
     currentLang.toUpperCase();
+
+  // Function to get the path with a new language
+  const getPathWithNewLang = (newLang: string) => {
+    // Remove the current language from the pathname
+    // e.g., "/ru/shop-directory/s1" -> "/shop-directory/s1"
+    const pathWithoutLang = pathname.replace(`/${currentLang}`, "");
+    // Add the new language
+    return `/${newLang}${pathWithoutLang}`;
+  };
 
   return (
     <Box px={4}>
@@ -56,7 +68,9 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
                 <Menu.Content>
                   {LANGS.map((lang) => (
                     <Menu.Item key={lang.code} value={lang.code} asChild>
-                      <Link href={`/${lang.code}`}>{lang.label}</Link>
+                      <Link href={getPathWithNewLang(lang.code)}>
+                        {lang.label}
+                      </Link>
                     </Menu.Item>
                   ))}
                 </Menu.Content>
@@ -89,7 +103,7 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
             </Link>
             {/* Mobile Language Switcher */}
             {LANGS.map((lang) => (
-              <Link key={lang.code} href={`/${lang.code}`}>
+              <Link key={lang.code} href={getPathWithNewLang(lang.code)}>
                 <Button w="full" size="sm">
                   {lang.label}
                 </Button>
