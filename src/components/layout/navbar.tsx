@@ -44,22 +44,21 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
   };
 
   return (
-    <Box px={4}>
+    <Box px={4} paddingLeft="10">
       <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Link href={`/${currentLang}`}>
-          <Box w="100%" p="4" fontWeight="bold">
-            Archa
-          </Box>
-        </Link>
+        <HStack display={{ base: "none", md: "flex" }}>
+          <Link href={`/${currentLang}`}>
+            <Box w="100%" p="0" fontWeight="bold">
+              Archa
+            </Box>
+          </Link>
+          <Link href={ROUTES.SHOPS(currentLang)}>{dict.nav.shops}</Link>
+        </HStack>
 
         <HStack display={{ base: "none", md: "flex" }}>
-          <Link href={ROUTES.SHOPS(currentLang)}>
-            <Button>{dict.nav.shops}</Button>
-          </Link>
           <Link href={ROUTES.LOGIN(currentLang)}>
             <Button size="sm">{dict.nav.login}</Button>
           </Link>
-
           {/* Language Switcher */}
           <Menu.Root>
             <ColorModeButton />
@@ -81,6 +80,14 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
             </Portal>
           </Menu.Root>
         </HStack>
+
+        <Box display={{ md: "none" }}>
+          <Link href={`/${currentLang}`}>
+            <Box w="100%" p="4" fontWeight="bold">
+              Archa
+            </Box>
+          </Link>
+        </Box>
 
         {/* Mobile Hamburger */}
         <IconButton

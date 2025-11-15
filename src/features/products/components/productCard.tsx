@@ -6,6 +6,7 @@ import {
   Stack,
   Button,
   Card,
+  HStack,
 } from "@chakra-ui/react";
 
 interface Product {
@@ -22,21 +23,18 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Box borderWidth="1px" borderRadius="lg" overflow="hidden" p={4} marginLeft={4} >
-      {product.image && (
-        <Image
-          src={product.image}
-          alt={product.name}
-          boxSize="150px"
-          objectFit="cover"
-          mx="auto"
-        />
-      )}
-      <Stack mt={2} textAlign="center">
+    <Box overflow="hidden" p={4} marginLeft={0} w={350}>
+      <Image
+        src={product.image}
+        alt={product.name}
+        boxSize={350}
+        objectFit="cover"
+        mx="auto"
+      />
+      <HStack pt={4} justifyContent="space-between">
         <Heading size="md">{product.name}</Heading>
-        <Heading size="md">{product.description}</Heading>
-        <Text fontWeight="bold">${product.price.toFixed(2)}</Text>
-      </Stack>
+        <Text fontWeight="bold">{product.price.toFixed(2)} сом</Text>
+      </HStack>
     </Box>
   );
 }

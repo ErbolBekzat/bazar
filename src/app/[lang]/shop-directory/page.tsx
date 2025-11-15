@@ -19,11 +19,10 @@ export default async function ShopsDirectoryPage({
   return (
     <Box p={6}>
       <Heading mb={4}>{dict.shopDirectory.shopsDirectory}</Heading>
-      <SimpleGrid columns={{ base: 1, md: 3 }}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} columnGap="6" rowGap="6">
         {shops.map((shop) => (
           <Box
             key={shop.id}
-            p={4}
             borderWidth="1px"
             borderRadius="md"
             _hover={{ shadow: "md" }}

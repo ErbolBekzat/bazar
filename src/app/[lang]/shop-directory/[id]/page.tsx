@@ -25,7 +25,7 @@ export default async function ShopStorefront({ params }: ShopPageProps) {
     );
 
   return (
-    <Box p={6}>
+    <Box p={0}>
       <Heading mb={4}>{shop.name}</Heading>
       <Heading size="md" mb={2}>
         {dict.shopPage.products}

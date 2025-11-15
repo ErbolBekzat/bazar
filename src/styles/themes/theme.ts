@@ -18,40 +18,59 @@ const config = defineConfig({
           900: { value: "#1b0f40" },
         },
         surface: {
-          light: { value: "#fefdfb" }, // “milk white”
+          light: { value: "#fefdfb" }, // "milk white"
           dark: { value: "#1a1a24ff" }, // dark blue background
         },
         text: {
           light: { value: "#1a1a1a" },
           dark: { value: "#e9ecf1" },
         },
+        icon: {
+          light: { value: "#e9ecf1" }, // gray.100 equivalent
+          dark: { value: "#1a1a1a" },
+        },
+        iconButton: {
+          light: { value: "#18181b" }, // gray.100 equivalent
+          dark: { value: "#fefdfb" }, // gray.700 equivalent
+        },
       },
     },
     semanticTokens: {
       colors: {
+        // Background color
         bg: {
           value: {
             _light: "{colors.surface.light}",
             _dark: "{colors.surface.dark}",
           },
         },
+        // Text color
         text: {
           value: {
             _light: "{colors.text.light}",
             _dark: "{colors.text.dark}",
           },
         },
+        // Primary brand color
         primary: {
           value: {
             _light: "{colors.brand.500}",
             _dark: "{colors.brand.100}",
           },
         },
+        // Icon color
         icon: {
-          value: { _light: "{colors.brand.200}", _dark: "{colors.brand.200}" },
+          value: {
+            _light: "{colors.icon.light}",
+            _dark: "{colors.icon.dark}",
+          },
         },
+        // Icon button background - THIS IS THE KEY FIX
         iconButtonBg: {
-          value: { _light: "gray.100", _dark: "gray.700" }, // your choice
+          value: {
+            _light: "{colors.iconButton.light}",
+            _dark: "{colors.iconButton.dark}",
+          },
         },
       },
     },
