@@ -44,7 +44,7 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
   };
 
   return (
-    <Box px={4} paddingLeft="10">
+    <Box px={{ base: 4, lg: 10 }}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <HStack display={{ base: "none", md: "flex" }}>
           <Link href={`/${currentLang}`}>
@@ -83,7 +83,7 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
 
         <Box display={{ md: "none" }}>
           <Link href={`/${currentLang}`}>
-            <Box w="100%" p="4" fontWeight="bold">
+            <Box w="100%" fontWeight="bold">
               Archa
             </Box>
           </Link>

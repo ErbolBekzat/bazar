@@ -25,9 +25,10 @@ export default async function RootLayout({
           <DictProvider dict={dict}>
             <Flex direction="column" minH="100vh">
               <Navbar currentLang={lang} />
-              <Box as="main" flex="1" paddingLeft="10">
+              <Box as="main" flex="1" px={{ base: 0, lg: 10 }}>
                 {children}
               </Box>
+
               <Footer />
             </Flex>
           </DictProvider>

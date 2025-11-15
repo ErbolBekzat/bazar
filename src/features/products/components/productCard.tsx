@@ -23,18 +23,28 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <Box overflow="hidden" p={4} marginLeft={0} w={350}>
+    <Box overflow="hidden" p={0} w="100%">
       <Image
         src={product.image}
         alt={product.name}
-        boxSize={350}
+        w="100%"
+        h={{ base: "180px", sm: "180px", md: "220px", lg: "260px" }}
         objectFit="cover"
-        mx="auto"
+        rounded="md"
       />
-      <HStack pt={4} justifyContent="space-between">
-        <Heading size="md">{product.name}</Heading>
-        <Text fontWeight="bold">{product.price.toFixed(2)} сом</Text>
-      </HStack>
+      <Stack
+        pt={3}
+        direction={{ base: "column", lg: "row" }} // column on mobile, row on lg+
+        justifyContent="space-between"
+        align={{ base: "flex-start", lg: "center" }}
+      >
+        <Heading size={{ base: "sm", md: "md" }}>{product.name}</Heading>
+        <Text fontWeight="bold" fontSize={{ base: "sm", md: "md" }}>
+          {product.price.toFixed(2)} сом
+        </Text>
+      </Stack>
     </Box>
   );
 }
+
+

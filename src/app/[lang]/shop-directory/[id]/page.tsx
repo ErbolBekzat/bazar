@@ -25,12 +25,14 @@ export default async function ShopStorefront({ params }: ShopPageProps) {
     );
 
   return (
-    <Box p={0}>
-      <Heading mb={4}>{shop.name}</Heading>
+    <Box px={4}>
+      <Heading mb={4}>
+        {shop.name} 
+      </Heading>
       <Heading size="md" mb={2}>
         {dict.shopPage.products}
       </Heading>
-      <SimpleGrid columns={{ base: 1, md: 5 }}>
+      <SimpleGrid gap={4} columns={{ base: 1, xs: 2, sm: 3, md: 4, lg: 4, xl: 5, "2x1": 7 }}>
         {shop.products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
