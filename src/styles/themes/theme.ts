@@ -47,6 +47,12 @@ const config = defineConfig({
             _dark: "{colors.brand.100}",
           },
         },
+        icon: {
+          value: { _light: "{colors.brand.200}", _dark: "{colors.brand.200}" },
+        },
+        iconButtonBg: {
+          value: { _light: "gray.100", _dark: "gray.700" }, // your choice
+        },
       },
     },
   },

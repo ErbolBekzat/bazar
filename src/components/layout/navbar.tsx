@@ -16,6 +16,8 @@ import { IoCloseSharp } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ROUTES } from "@/lib/constants/routes";
 import { useDict } from "@/context/dict-context";
+import { ColorModeButton } from "@/components/ui/color-mode";
+
 
 const LANGS = [
   { code: "en", label: "EN" },
@@ -46,7 +48,7 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Link href={`/${currentLang}`}>
           <Box w="100%" p="4" fontWeight="bold">
-            Bazar
+            Archa
           </Box>
         </Link>
 
@@ -60,6 +62,7 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
 
           {/* Language Switcher */}
           <Menu.Root>
+            <ColorModeButton />
             <Menu.Trigger asChild>
               <Button size="sm">{currentLangLabel}</Button>
             </Menu.Trigger>
@@ -101,6 +104,7 @@ export default function Navbar({ currentLang }: { currentLang: string }) {
                 {dict.nav.login}
               </Button>
             </Link>
+            <ColorModeButton />
             {/* Mobile Language Switcher */}
             {LANGS.map((lang) => (
               <Link key={lang.code} href={getPathWithNewLang(lang.code)}>

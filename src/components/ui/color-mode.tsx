@@ -60,6 +60,8 @@ export const ColorModeButton = React.forwardRef<
         variant="ghost"
         aria-label="Toggle color mode"
         size="sm"
+        color="icon"
+        bg="iconButtonBg"
         ref={ref}
         {...props}
         css={{
@@ -72,7 +74,7 @@ export const ColorModeButton = React.forwardRef<
         <ColorModeIcon />
       </IconButton>
     </ClientOnly>
-  )
+  );
 })
 
 export const LightMode = React.forwardRef<HTMLSpanElement, SpanProps>(
